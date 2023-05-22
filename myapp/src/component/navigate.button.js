@@ -2,11 +2,11 @@ import { useNavigate } from "react-router"
 import PropTypes from 'prop-types'
 import { memo } from "react"
 
-function NavigateButton({ url, name }) {
+function NavigateButton({ url, name, classis }) {
 
     const navigate = useNavigate()
     return (
-        <button className='Home' onClick={() => navigate(url)}>{name}</button>
+        <button className={classis} onClick={() => navigate(url)}>{name}</button>
     )
 }
 

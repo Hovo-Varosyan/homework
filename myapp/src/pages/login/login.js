@@ -22,7 +22,7 @@ function Login({ setLogin }) {
 
   return (
     <>
-      <NavigateButton url={"/"} name={"Home"} />
+      <NavigateButton url={"/"} name={"Home"} classis={"max_width"} />
       <div className='Login'>
         <form onSubmit={handleSubmit(onSubmit)} className='login_form'>
           {

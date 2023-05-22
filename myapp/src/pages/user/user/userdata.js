@@ -22,23 +22,23 @@ function UserData() {
         load===true?
         <div>
             <div>
-                <button onClick={()=>navigate("/")}>Home</button>
+                <button onClick={()=>navigate("/")} className="userdata_home">Home</button>
                 </div>
             <table className="data_table">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>UserName</th>
+                        <th><span></span>Name</th>
                         <th>Email</th>
-                        <th><button onClick={()=>navigate("/create-user")}>Create user</button></th>
+                        <th> Phone</th>
+                        <th><button onClick={()=>navigate("/create-user")}>Create user<span>+</span></button></th>
                     </tr>
                 </thead>
                 <tbody>{
                     userlist.map((element) => {
                         return <tr key={element.id}>
                             <td>{element.name}</td>
-                            <td>{element.email}</td>
-                            <td>{element.phone}</td>
+                            <td><span>&#x1F4E7;</span>{element.email}</td>
+                            <td><span>&#9990;</span>{element.phone}</td>
                             <td><Link to={`/UserData/User/${element.id}`}><button >Profile</button></Link></td>
                         </tr>
                     })

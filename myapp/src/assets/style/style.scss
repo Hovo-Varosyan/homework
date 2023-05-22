@@ -257,19 +257,29 @@ section {
   width: 100%;
   text-align: center;
   th {
-    color: red;
+    font-size:20px ;
     padding: 15px 25px;
     font-weight: 600;
+    border-top: 1px solid rgb(155, 155, 155);
+    background-color:  rgb(227, 227, 227);
+  }
+  span{
+    margin: 10px;
   }
   td {
     @include tabletd();
+  }
+  tr:hover{
+    background-color: rgb(238, 237, 237);
+    transform: scale(1.05);
+   
   }
   button {
     padding: 5px 15px;
     border: none;
     @include button();
   }
-  button:hover {
+  button:hover { 
     transform: scale(1.2);
   }
 }
@@ -296,12 +306,15 @@ section {
 
 .user {
   @include flex();
-  height: 100vh;
+ margin-top: 30px
 }
 
 .create_user {
   @include flex();
   gap: 50px;
+  .form_button{
+    align-items: stretch;
+  }
   input {
     padding: 8px 14px;
     border-top-right-radius: 10px;
@@ -347,12 +360,15 @@ section {
   top: 0;
   left: 0;
   z-index: 99;
+  width: 50%;
+  border-right: none;
 }
 
 button {
   @include button();
   padding: 10px;
 }
+
 
 .comment {
   @include flex();
@@ -371,6 +387,15 @@ button {
   position: absolute;
   right: 0;
   top: 0;
-  @include button();
-  z-index:100
+  background: linear-gradient(45deg,  rgb(53, 0, 0,),red) !important; 
+  border-left: none;
+  z-index:100;
+  width: 50%;
+}
+.userdata_home{
+  width: 100%;
+  margin-bottom: 30px;
+}
+.max_width{
+  width: 100%;
 }

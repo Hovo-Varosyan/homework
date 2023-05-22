@@ -10,11 +10,11 @@ function Landing({ login, setLogin }) {
             {
                 login === true ?
                     <>
-                        <button className="landing_userdata" onClick={() => navigate("/UserData")}>User data</button>
-                        <button onClick={() => setLogin(false)}>Sign out</button>
+                        <NavigateButton url={"/UserData"} name={"User data"} classis={"landing_userdata"} />
+                        <button onClick={() => setLogin(false)} className="Home">Sign out</button>
                     </>
                     :
-                    <NavigateButton url={"/Login"} name={"Login"} />
+                    <NavigateButton url={"/Login"} name={"Login"} classis={"Home max_width"} />
 
             }
             <section>
