@@ -1,0 +1,376 @@
+@mixin button {
+  background: linear-gradient(45deg, red, rgb(53, 0, 0));
+  color: white;
+}
+@mixin tabletd {
+  border-top: 1px solid rgb(130, 130, 130);
+  border-bottom: 1px solid rgb(130, 130, 130);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+@mixin div {
+  background-color: black;
+  display: flex;
+  color: white;
+}
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin table {
+  border-collapse: collapse;
+  border: 1px solid rgb(138, 138, 138);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.landing_body {
+  background-color: black;
+}
+body {
+  font-family: "Rajdhani", sans-serif;
+}
+
+.welcome {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0 5%;
+  position: relative;
+
+  h1 {
+    font-size: 10vw;
+    left: 0;
+    top: 25%;
+    position: absolute;
+    height: 100%;
+    word-break: break-all;
+    padding: 5%;
+  }
+
+  div {
+    aspect-ratio: 2;
+    width: 95%;
+    background-image: url(../images/lion.gif);
+    mix-blend-mode: multiply;
+  }
+}
+
+.divone {
+  @include div();
+  div {
+    width: 50%;
+  }
+
+  .divtw {
+    @include flex();
+    gap: 10px;
+  }
+  span {
+    font-size: 32px;
+  }
+  .span-div {
+    height: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    span {
+      animation: child 8s infinite;
+      color: red;
+    }
+  }
+  @keyframes child {
+    0% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+    50% {
+      transform: translate3d(0px, -122px, 0px);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+  }
+}
+
+section {
+  padding: 10px;
+}
+
+.load_div {
+  @include div();
+  .text {
+    width: 50%;
+  }
+  .load {
+    @include flex();
+    width: 100%;
+    position: relative;
+    .div_load {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  }
+  .div_load:nth-child(1) {
+    border: 2px solid red;
+    animation: loadone 1s linear infinite;
+  }
+  .div_load:nth-child(2) {
+    border: 2px solid green;
+    animation: loadtw 1s linear infinite;
+  }
+  .div_load:nth-child(3) {
+    border: 2px solid aqua;
+    animation: loadtre 1s linear infinite;
+  }
+  .div_load:nth-child(4) {
+    border: 2px solid rgb(153, 5, 136);
+    animation: loadfore 1s linear infinite;
+  }
+  .div_load:nth-child(5) {
+    border: 2px solid red;
+    animation: loadfive 1s linear infinite;
+  }
+  .div_load:nth-child(6) {
+    border: 2px solid green;
+    animation: loadsix 1s linear infinite;
+  }
+  .div_load:nth-child(7) {
+    border: 2px solid aqua;
+    animation: loadseven 1s linear infinite;
+  }
+  .div_load:nth-child(8) {
+    border: 2px solid rgb(153, 5, 136);
+    animation: loadeit 1s linear infinite;
+  }
+  @keyframes loadone {
+    to {
+      transform: rotateY(360deg) rotateZ(360deg);
+    }
+  }
+  @keyframes loadtw {
+    to {
+      transform: rotateY(315deg) rotateZ(360deg);
+    }
+  }
+  @keyframes loadtre {
+    to {
+      transform: rotateY(270deg) rotateZ(360deg);
+    }
+  }
+  @keyframes loadfore {
+    to {
+      transform: rotateY(225deg) rotateZ(360deg);
+    }
+  }
+  @keyframes loadfive {
+    to {
+      transform: rotateY(180deg) rotateZ(360deg);
+    }
+  }
+  @keyframes loadsix {
+    to {
+      transform: rotateY(135deg) rotateZ(360deg);
+    }
+  }
+  @keyframes loadseven {
+    to {
+      transform: rotateY(90deg) rotateZ(360deg);
+    }
+  }
+  @keyframes loadeit {
+    to {
+      transform: rotateY(45deg) rotateZ(360deg);
+    }
+  }
+}
+
+.div {
+  margin: 10px 0;
+}
+
+.Login {
+  width: 100%;
+  height: 100vh;
+  @include flex;
+  .login_form {
+    border: 1px solid red;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 50px;
+    @include flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: loginborder 7s linear infinite;
+
+    p {
+      color: red;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    input {
+      padding: 8px 14px;
+    }
+    input[type="submit"] {
+      @include button();
+    }
+    @keyframes loginborder {
+      10% {
+        box-shadow: 10px 0px 10px rgb(178, 24, 0),
+          0px 10px 10px rgb(4, 154, 134), -10px 0px 10px rgb(181, 198, 0),
+          0px -10px 10px rgb(181, 118, 0);
+      }
+      20% {
+        box-shadow: 10px 0px 10px rgb(33, 2, 104), 0px 10px 10px rgb(0, 139, 60),
+          -10px 0px 10px rgb(1, 7, 123), 0px -10px 10px rgb(0, 181, 9);
+      }
+      40% {
+        box-shadow: 10px 0px 10px rgb(0, 135, 36), 0px 10px 10px rgb(1, 183, 43),
+          -10px 0px 10px rgb(222, 127, 2), 0px -10px 10px rgb(125, 188, 8);
+      }
+      60% {
+        box-shadow: 10px 0px 10px rgb(183, 0, 176), 0px 10px 10px rgb(81, 1, 52),
+          -10px 0px 10px rgba(74, 180, 215, 0.971),
+          0px -10px 10px rgb(13, 73, 184);
+      }
+      80% {
+        box-shadow: 10px 0px 10px rgb(7, 0, 135), 0px 10px 10px rgb(132, 255, 0),
+          -10px 0px 10px rgb(92, 3, 3), 0px -10px 10px rgb(81, 181, 0);
+      }
+      100% {
+        box-shadow: 10px 0px 10px rgb(0, 181, 133),
+          0px 10px 10px rgb(34, 3, 135), -10px 0px 10px rgb(134, 3, 121),
+          0px -10px 10px rgb(181, 0, 33);
+      }
+    }
+  }
+}
+
+.data_table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  th {
+    color: red;
+    padding: 15px 25px;
+    font-weight: 600;
+  }
+  td {
+    @include tabletd();
+  }
+  button {
+    padding: 5px 15px;
+    border: none;
+    @include button();
+  }
+  button:hover {
+    transform: scale(1.2);
+  }
+}
+
+.user_table {
+  text-align: center;
+  table {
+    @include table();
+    width: 100%;
+    td {
+      width: 100%;
+    }
+  }
+  @include table();
+  td {
+    @include tabletd();
+  }
+  button {
+    @include button();
+    width: 100%;
+    padding: 8px 15px;
+  }
+}
+
+.user {
+  @include flex();
+  height: 100vh;
+}
+
+.create_user {
+  @include flex();
+  gap: 50px;
+  input {
+    padding: 8px 14px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  input[type="submit"] {
+    @include button();
+    padding: 10px 15px;
+  }
+  div {
+    @include flex();
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+  }
+  p {
+    color: rgb(255, 38, 38);
+    font-weight: 500;
+  }
+}
+
+.Loading {
+  @include flex();
+  height: 100vh;
+  div {
+    border-top: 1px solid red;
+    padding: 50px 30px;
+    border-radius: 50%;
+    animation: borderLoad 5s linear infinite;
+  }
+  @keyframes borderLoad {
+    to {
+      transform: rotate(360deg);
+      border-width: 3px;
+    }
+  }
+}
+
+.Home {
+  position: absolute;
+  @include button();
+  padding: 10px 20px;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+button {
+  @include button();
+  padding: 10px;
+}
+
+.comment {
+  @include flex();
+  position: absolute;
+  z-index: 100;
+  height: 100vh;
+  background-color: white;
+  width: 100vh;
+  flex-direction: column;
+  gap: 20px;
+  input {
+    padding: 10px 15px;
+  }
+}
+.landing_userdata{
+  position: absolute;
+  right: 0;
+  top: 0;
+  @include button();
+  z-index:100
+}
