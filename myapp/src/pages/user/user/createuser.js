@@ -12,12 +12,13 @@ function CreateUser() {
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => handleCreatUser(data);
-    const [idArray, setIdArray] = useState([userlist.length - 1].id !== undefined ? userlist[userlist.length - 1].id + 1 : 1)
+    const [idArray, setIdArray] = useState(null)
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         if (userlist !== undefined) {
             setLoading(true)
+            setIdArray( userlist[userlist.length - 1].id + 1)
         }
         else {
             setLoading(false)
