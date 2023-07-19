@@ -8,6 +8,7 @@ function UserData() {
 
     const userlist = useSelector((state) => state.dataUser.userlist)
     const[load, setLoading]=useState(false)
+
     useEffect(() => {
         if (userlist !== undefined) {
             setLoading(true)

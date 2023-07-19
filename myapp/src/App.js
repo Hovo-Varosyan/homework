@@ -22,7 +22,7 @@ function App() {
   }, [login])
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users").then((respons) => dispatch(ActionData(respons.data)))
+    axios.get("https://jsonplaceholder.typicode.com/users").then((respons) =>{ dispatch(ActionData(respons.data))})
   }, [])
 
 

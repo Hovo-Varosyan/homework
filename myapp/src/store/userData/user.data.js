@@ -9,7 +9,6 @@ function dataUser(state = initialState, action) {
     switch (action.type) {
         case USER_DATA:
             return {
-                ...state,
                 userlist: action.payload
             }
         case DELETE_USER:
@@ -18,13 +17,13 @@ function dataUser(state = initialState, action) {
             );
 
             return {
-                ...state,
+                
                 userlist: Userlist
             }
 
         case CREATE_USER:
             return {
-                ...state,
+               
                 userlist: [...state.userlist, action.payload]
             }
         case COMMENT_USER:
@@ -46,7 +45,7 @@ function dataUser(state = initialState, action) {
             })
 
             return {
-                ...state,
+               
                 userlist: addComment
             }
 
